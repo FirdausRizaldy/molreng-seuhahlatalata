@@ -17,6 +17,7 @@ class CreateProduksTable extends Migration
             $table->id();
             $table->string('nama_produk');
             $table->string('harga_produk');
+            
             $table->timestamps();
         });
     }
