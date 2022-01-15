@@ -18,3 +18,12 @@ Route::get('/', function () {
 });
 
 
+Route::group(['middleware' => ['auth:sanctum', 'verified'],['prefix' => "alumni"]],function(){
+    
+    Route::get('/dashboard', function () {
+        return view('index');
+    })->name('dashboard');
+    Route::get('/produk', function () {
+        return view('produk');
+    });
+});
