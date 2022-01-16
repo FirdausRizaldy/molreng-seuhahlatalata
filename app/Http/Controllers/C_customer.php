@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class C_produk extends Controller
+class C_customer extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class C_produk extends Controller
     public function index()
     {
         $data = array(
-            'menu'=>'produk',
-            'submenu'=>'produk-index'
+            'menu'=>'customer',
+            'submenu'=>'customer-index'
         );
-        return view('produk.index', $data);
+        return view('customer.index', $data);
     }
 
     /**
@@ -28,10 +28,10 @@ class C_produk extends Controller
     public function create()
     {
         $data = array(
-            'menu'=>'produk',
-            'submenu'=>'produk-create'
+            'menu'=>'customer',
+            'submenu'=>'customer-create'
         );
-        return view('produk.create', $data);
+        return view('customer.create', $data);
     }
 
     /**
@@ -54,10 +54,10 @@ class C_produk extends Controller
     public function show($id)
     {
         $data = array(
-            'menu'=>'produk',
+            'menu'=>'customer',
             'submenu'=>''
         );
-        return view('produk.index', $data);
+        return view('customer.index', $data);
     }
 
     /**
@@ -69,10 +69,10 @@ class C_produk extends Controller
     public function edit($id)
     {
         $data = array(
-            'menu'=>'produk',
+            'menu'=>'customer',
             'submenu'=>''
         );
-        return view('produk.index', $data);
+        return view('customer.index', $data);
     }
 
     /**
