@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class C_produk extends Controller
 {
@@ -17,7 +18,10 @@ class C_produk extends Controller
             'menu'=>'produk',
             'submenu'=>'produk-index'
         );
-        return view('produk.index', $data);
+        $produk = DB::table('produks')
+        ->get();
+        
+        return view('produk.index', $data,compact('produk'));
     }
 
     /**
@@ -40,9 +44,17 @@ class C_produk extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $post)
     {
+        DB::table('produks')->insert([
+            'id_produk' => $post->id,
+            'nama_produk' => $post->nama,
+            'harga_produk' => $post->harga,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
         
+        return redirect('/produk');
     }
 
     /**

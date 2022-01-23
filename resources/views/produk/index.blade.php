@@ -25,25 +25,17 @@
             <th>No</th>
             <th>ID Produk</th>
             <th>Nama</th>
-            <th>Jenis</th>
-            <th>Foto</th>
-            <th>Stok</th>
+            <th>Harga</th>
           </tr>
         </thead>
-        {{-- @foreach($customer as $data)
+        @foreach($produk as $data)
         <tr>
           <td>{{ $loop -> iteration }}</td>
-          <td>{{ $data -> id_customer }}</td>
-          <td>{{ $data -> nama }}</td>
-          <td>{{ $data -> alamat }}</td>
-          <td>{{ $data -> nama_kelurahan }}</td>
-          @if($data->foto == null)
-          <td><img src="{{ asset('/storage/'.$data->file_path) }}" alt=""></td>
-          @else
-          <td><img src="{{ $data->foto }}" alt=""></td>
-          @endif
+          <td>{{ $data -> id_produk }}</td>
+          <td>{{ $data -> nama_produk }}</td>
+          <td>{{ $data -> harga_produk }}</td>
         </tr>
-        @endforeach --}}
+        @endforeach
       </table>
     </div>
     <!-- /.card-body -->

@@ -27,7 +27,11 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth:sanctum', 'verified'],['prefix' => "alumni"]],function(){
     
     Route::get('/dashboard', function () {
-        return view('index');
+        $data = array(
+            'menu'=>'dashboard',
+            'submenu'=>''
+        );
+        return view('index', $data);
     })->name('dashboard');
 
 
